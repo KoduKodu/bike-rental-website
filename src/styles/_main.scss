@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.main-padding {
+  padding: 0vh 4vw;
+
+}
+
+.section-header {
+  position: relative;
+  margin: 0;
+
+  span {
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    transform: translateX(-50%) translateY(-90%) rotate(-90deg);
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+  }
+}
+
+// MAIN CONTAINER
+.main {
+  @include fontStack(400, 18px, var(--main-text-color));
+
+  height: 100%;
+}
+
+// MAIN HEADER
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  &__title {
+    @include fontStack(400, 24px, var(--main-text-color));
+
+    text-transform: uppercase;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &__menu {
+    display: inline-flex;
+    list-style: none;
+
+    &-item {
+      a {
+        text-transform: uppercase;
+        margin-left: 44px;
+        text-decoration: none;
+        color: var(--main-text-color);
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: var(--light-green-active);
+        }
+      }
+    }
+  }
+}
+
+// MAIN HERO
+.main-hero {
+  display: grid;
+  background: url(./../images/main-hero.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 90vh;
+
+  &__title {
+    @include fontStack(400, 96px, var(--white));
+
+    line-height: 124px;
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+  }
+}
