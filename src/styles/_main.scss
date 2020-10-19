@@ -94,3 +94,114 @@ body {
     justify-self: center;
   }
 }
+
+// MAIN BIKES RENTAL
+.main-bikes-rental {
+  display: grid;
+  grid-template-columns: 40px 200px 1fr;
+  grid-template-rows: 600px;
+  gap: 1px 1px;
+  grid-template-areas: ". . .";
+  margin: 80px 0 0 0;
+
+  &__categories {
+    &-menu {
+      list-style: none;
+      display: block;
+      margin: 0;
+
+      &__link {
+        padding: 40px 0;
+
+        a {
+          @include fontStack(400, 36px, var(--gray));
+
+          text-decoration: none;
+
+          &:hover {
+            color: var(--light-green-active);
+          }
+        }
+      }
+    }
+  }
+
+  &__bikes {
+    display: flex;
+    justify-content: space-between;
+
+    &__single-bike {
+      display: flex;
+      flex-direction: column;
+      align-content: space-around;
+
+      .fade-leave-active {
+        transition: all 0.9s ease;
+        overflow: hidden;
+        visibility: visible;
+        position: absolute;
+        left: 0;
+        opacity: 1;
+        display: flex;
+        flex-direction: column;
+        align-content: space-around;
+      }
+
+      .fade-enter,
+      .fade-leave-to {
+        visibility: hidden;
+        position: absolute;
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        align-content: space-around;
+      }
+
+      &__image {
+        display: flex;
+        justify-content: space-around;
+        align-content: center;
+        margin-top: 20px;
+
+        img {
+          max-height: 260px;
+        }
+
+        .prev,
+        .next {
+          align-self: center;
+          cursor: pointer;
+          height: 40px;
+          background: none;
+          width: auto;
+          color: var(--gray);
+          font-weight: bold;
+          font-size: 18px;
+          transition: 0.7s ease;
+          border: none;
+          border-radius: 0 4px 4px 0;
+          text-decoration: none;
+          user-select: none;
+        }
+      }
+
+      &__name {
+        letter-spacing: 0.1em;
+        padding-left: 20px;
+      }
+
+      &__desc {
+        line-height: 23px;
+        letter-spacing: 0.1em;
+        padding-left: 20px;
+        width: 70%;
+      }
+    }
+
+    &__cat-description {
+      max-width: 30%;
+      line-height: 23px;
+      letter-spacing: 0.1em;
+    }
+  }
+}

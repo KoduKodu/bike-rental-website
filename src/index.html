@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.4.2/vue-router.js"></script> -->
+
   <title>Bike Rental</title>
 </head>
 <body>
@@ -24,5 +27,34 @@
 		<div class="main-hero">
 			<h2 class="main-hero__title">#jedźmy<br>gdzieś</h2>
 		</div>
+
+		<section class="main-bikes-rental" id="main-bikes-rental-app">
+			<h3 class="main-bikes-rental__header section-header"><span>rowery</span></h3>
+			<div class="main-bikes-rental__categories">
+				<ul class="main-bikes-rental__categories-menu">
+					<li class="main-bikes-rental__categories-menu__link">
+						<router-link :to="{ name: 'Bikes', params: { catId: 'miejskie', data: categories.city }}">
+							rowery miejskie
+						</router-link>
+					</li>
+					<li class="main-bikes-rental__categories-menu__link">
+						<router-link :to="{ name: 'Bikes', params: { catId: 'gorskie', data: categories.mountain }}">
+							rowery górskie
+						</router-link>
+					</li>
+					<li class="main-bikes-rental__categories-menu__link">
+						<router-link :to="{ name: 'Bikes', params: { catId: 'szosowe', data: categories.road }}">
+							rowery szosowe
+						</router-link>
+					</li>
+				</ul>
+			</div>
+			<router-view>
+			</router-view>
+		</section>
+
+		<script src="js/rental-bikes/components/bikes.vue"></script>
+		<script src="js/rental-bikes/app.js"></script>
+
 </body>
 </html>
