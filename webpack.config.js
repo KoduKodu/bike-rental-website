@@ -4,6 +4,7 @@ const { HotModuleReplacementPlugin } = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: join(__dirname, 'src/js', 'index.js'), 
@@ -81,6 +82,11 @@ module.exports = {
               ],
             ],
           },
+        }),
+        new CopyPlugin({
+          patterns: [
+            { from: 'src/_redirects'},
+          ],
         }),
         new HTMLWebpackPlugin({
             showErrors: true,
