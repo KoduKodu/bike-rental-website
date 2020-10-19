@@ -205,3 +205,47 @@ body {
     }
   }
 }
+
+//MAIN RENT BIKE FAQ
+.main-rent-bike-faq {
+  display: flex;
+  height: 250vh;
+
+  &__image {
+    background: url(./../images/rent_black_bike.png) no-repeat;
+    background-size: cover;
+    width: 30%;
+    height: 100vh;
+  }
+
+  &__description {
+    width: 70%;
+
+    &__content {
+      height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-left: 50px;
+
+      p {
+        @include fontStack(400, 24px, var(--main-text-color));
+
+        line-height: 47px;
+        width: 90%;
+        overflow-wrap: break-word;
+
+        a {
+          color: var(--link);
+          text-decoration: none;
+          transition: all 0.3s ease;
+
+          &:hover {
+            letter-spacing: 1.3px;
+          }
+        }
+      }
+    }
+  }
+}
