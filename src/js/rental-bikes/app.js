@@ -75,6 +75,9 @@ new Vue({
       },
     },
   },
+  beforeCreate() {
+    console.log('At this point, events and lifecycle have been initialized.')
+  },
   el: '#main-bikes-rental-app',
   router,
 });

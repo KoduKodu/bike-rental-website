@@ -25,7 +25,11 @@
 			</ul>
 		</header>
 		<div class="main-hero">
-			<h2 class="main-hero__title">#jedźmy<br>gdzieś</h2>
+			<div class="main-hero__title">
+				<h2 class="main-hero__title-first">#jedźmy</h2>
+				<br>
+				<h2 class="main-hero__title-second">gdzieś</h2>
+			</div>
 		</div>
 
 		<section class="main-bikes-rental" id="main-bikes-rental-app">
@@ -49,7 +53,7 @@
 					</li>
 				</ul>
 			</div>
-			<router-view>
+			<router-view :to="{ name: 'Bikes', params: { catId: 'miejskie', data: categories.city }}">
 			</router-view>
 		</section>
 
@@ -170,6 +174,7 @@
 			});
 	
 		</script>
+		<script src="js/index.js"></script>
 
 </body>
 </html>

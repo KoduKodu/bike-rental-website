@@ -46,12 +46,11 @@ body {
   justify-content: space-between;
   align-items: flex-end;
   padding-top: 30px;
+  opacity: 0;
 
   &__title {
     @include fontStack(400, 24px, var(--main-text-color));
-
     text-transform: uppercase;
-
     span {
       font-weight: 700;
     }
@@ -60,7 +59,6 @@ body {
   &__menu {
     display: inline-flex;
     list-style: none;
-
     &-item {
       a {
         text-transform: uppercase;
@@ -85,14 +83,21 @@ body {
   background-position: center;
   background-size: cover;
   min-height: 90vh;
+  opacity: 0;
 
   &__title {
-    @include fontStack(400, 96px, var(--white));
-
-    line-height: 124px;
     text-align: center;
     align-self: center;
     justify-self: center;
+    line-height: 50px;
+    &-first{
+      @include fontStack(400, 96px, var(--white));
+    transform: translateX(1000px);
+    }
+    &-second{
+      @include fontStack(400, 96px, var(--white));
+      transform: translateX(-1000px);
+    }
   }
 }
 
